@@ -1,0 +1,23 @@
+.options{
+    overflow: initial;
+    white-space: initial;
+}
+
+ion-content {
+    // overwrite inline styles
+    --offset-bottom: auto!important;
+    --overflow: hidden;
+    overflow: auto;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+}
+
+ion-button {
+    width: 220px;
+    margin: auto;
+}
+
+.background {
+    background-color: rgb(255, 255, 255);
+}

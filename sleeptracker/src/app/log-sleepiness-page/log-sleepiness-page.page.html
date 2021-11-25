@@ -1,0 +1,44 @@
+
+
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Log Sleepiness</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="center">
+
+  <ion-item>
+    <ion-label class="start" position="floating">Current Date</ion-label>
+    <ion-datetime display-format="DDDD MMM D, YYYY" [(ngModel)]='date'></ion-datetime>
+  </ion-item>
+
+  <ion-list >
+    <ion-radio-group [(ngModel)]='loggedValue'>
+      <ion-list-header>
+        <ion-label>Sleepiness</ion-label>
+      </ion-list-header>
+      
+
+      <ion-item  *ngFor='let scale of staticScales | slice:1; index as i' >
+        <ion-label class='options'>{{i + 1}} - {{scale}}</ion-label>
+        <ion-radio slot="end" value={{i}}></ion-radio>
+      </ion-item>
+      <!-- concatenate summary with user note -->
+
+      <ion-item>
+        <ion-label position="floating">Note</ion-label>
+        <ion-input placeholder="Enter a brief description." type="text" [(ngModel)]='note'></ion-input>
+      </ion-item>
+      
+    </ion-radio-group>
+  </ion-list>
+
+  <ion-item class="background">
+    <ion-button *ngIf='loggedValue' expand="block" href='log-sleepiness-page' (click)='saveSleepiness()'>Save Data</ion-button>
+  </ion-item>
+</ion-content>
+

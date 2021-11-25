@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Hours Slept</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- <ion-list> -->
+    <!-- <ion-item-sliding *ngFor="let item of items">
+			
+			<ion-item-options side="right">
+				<button ion-button> -->
+          <!-- add a function to delete it from local storage -->
+          <!-- <ion-icon name="trash"></ion-icon>Delete
+        </button>
+			</ion-item-options>
+		</ion-item-sliding> -->
+      
+    
+<!-- </ion-list> -->
+  <ion-list>
+    <!-- add index so we know which button triggered the modal and which one to delete -->
+    <!-- ngIf='overnight.hide==true' -->
+    <ng-container *ngFor = "let overnight of sleepService.staticOvernightData; index as i">
+      <ion-card class='hoursCard' *ngIf='overnight.hide!=true'>
+        <ion-card-header>
+          <ion-button class='deleteButton' fill="clear" size="small" (click)="presentToast(i,overnight.keyInStorage)" >
+            <ion-icon  name="close-outline" ></ion-icon>
+          </ion-button>
+          <ion-card-subtitle class='date'>{{overnight.dateString()}}</ion-card-subtitle>
+          <ion-card-title><font size="+2" color=#307fe2>{{overnight.summaryString()}}</font> Slept</ion-card-title>
+        </ion-card-header>
+      </ion-card>
+    </ng-container >
+  </ion-list> 
+</ion-content>

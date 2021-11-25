@@ -1,0 +1,34 @@
+mandatory:
+//add modal to confirm delete datahttps://stackblitz.com/edit/ionic-eofb82?file=pages%2Fhome%2Fhome.html
+//add delete to sleepiness page as well
+//(use a map for all.. data) indexInAllSleepData:actual data
+record mp4 vid
+use navController instead of href
+save data button disppearing?
+update readme if necessary
+
+
+optional:
+vegalite
+notification&sharing
+add darkmode
+change colors of font, background,card, buttons to make it more appealing
+different sleepiness ->different colors
+change pages->tabs&swipe to delete https://stackblitz.com/edit/ionic-eofb82
+^^if tabs are used, change the home page)
+
+add observable so new sleep logs are displayed
+ionic local storage strategy for multiple pages:
+https://uci.yuja.com/V/Video?v=2328971&node=8382259&a=304603934&autoplay=1
+
+which one??
+firebase, ionic storage, **capacitor
+https://ionicframework.com/blog/choosing-a-data-storage-solution-ionic-storage-capacitor-storage-sqlite-or-ionic-secure-storage/
+
+https://ionicframework.com/docs
+
+https://uci.zoom.us/rec/play/71od7UrgRuikq3G1PcHaWSaX0xUIPWzbuIp-ZubDur4WbmU2w21o8m9osb7DVsK4z4j0yI-Jlw8k2uVQ.5Dl_-s_lbrPyCtDe?startTime=1614797226000&_x_zm_rtaid=-v_6ZxoVSPalibqTAyfuHg.1637712299920.92f0adcd765c395dac68bbbf89058d7d&_x_zm_rhtaid=241
+
+
+npm install --save @capacitor/core @capacitor/cli
+

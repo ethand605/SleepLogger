@@ -1,0 +1,47 @@
+<head>
+  <!-- <link rel='stylesheet' href='log-overnight-sleep.page.css'> -->
+  <!-- <link href="lib/ionic/css/ionic.css" rel="stylesheet"> -->
+</head>
+
+
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Overnight Tracker</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="center">
+  <!-- <ion-item class='sleep-text'>
+    <ion-label class="start" position="floating">Start Date</ion-label>
+    <ion-datetime display-format="DDDD MMM D, YYYY" [(ngModel)]='loggedDate'></ion-datetime>
+  </ion-item>
+
+  <ion-item class='sleep-text' *ngIf='loggedDate'>
+    <ion-label class="end" position="floating">Start Time</ion-label>
+    <ion-datetime display-format="HH:mm" [(ngModel)]='sleepStart'></ion-datetime>
+  </ion-item> -->
+
+  <ion-item class='sleep-text top'>
+    <ion-label class="start" position="floating">Start Time</ion-label>
+    <ion-datetime display-format="MMM DD, YYYY HH:mm" [(ngModel)]='sleepStart'></ion-datetime>
+  </ion-item>
+
+  <ion-item class='sleep-text bottom' *ngIf='sleepStart'>
+    <ion-label position="floating">Wake Up Time</ion-label>
+    <ion-datetime  display-format="MMM DD, YYYY HH:mm" min={{sleepStart}} [(ngModel)]='sleepEnd'></ion-datetime>
+    <!-- error prevention -->
+  </ion-item>
+  
+  <ion-button *ngIf = 'sleepEnd' class='save-button' (click)="saveOvernight()" expand="block" href='log-overnight-sleep' >Save Data</ion-button>
+  
+  <ion-item lines="none">
+    <ion-img src="../../assets/sleephours.png"></ion-img>
+  </ion-item>
+</ion-content>
+
+
+
+

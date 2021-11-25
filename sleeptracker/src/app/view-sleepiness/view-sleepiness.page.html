@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Sleepiness</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ng-container *ngFor = "let sleepiness of sleepService.staticSleepinessData; index as i">
+      <ion-card *ngIf='sleepiness.hide!=true'>
+        <ion-card-header>
+          <ion-card-subtitle>{{sleepiness.dateString()}}</ion-card-subtitle>
+          <ion-card-title>Level of Sleepiness: <font size="+2" color=#307fe2>{{sleepiness.summaryString()[0]}}</font></ion-card-title>
+          <ion-button class='deleteButton' fill="clear" size="small" (click)="presentToast(i,sleepiness.keyInStorage)" >
+            <ion-icon  name="close-outline" ></ion-icon>
+          </ion-button>
+        </ion-card-header>
+        <ion-card-content class='stanfordDesc'>{{sleepiness.summaryString().slice(1)}}</ion-card-content>
+        <ion-card-content>
+          note: {{sleepiness.note}}
+        </ion-card-content>
+      </ion-card>
+</ng-container>
+  </ion-list>  
+  
+</ion-content>

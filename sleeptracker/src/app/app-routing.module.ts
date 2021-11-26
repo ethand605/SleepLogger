@@ -2,15 +2,16 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
+  // {
+  //   path: 'home',
+  //   loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+  // },
+  // {
+  //   path: '',
+  //   redirectTo: 'home',
+  //   pathMatch: 'full'
+  // },
   {
-    path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
-  },
-  {
-    path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
-  },  {
     path: 'log-overnight-sleep',
     loadChildren: () => import('./log-overnight-sleep/log-overnight-sleep.module').then( m => m.LogOvernightSleepPageModule)
   },
@@ -26,6 +27,12 @@ const routes: Routes = [
     path: 'view-sleepiness',
     loadChildren: () => import('./view-sleepiness/view-sleepiness.module').then( m => m.ViewSleepinessPageModule)
   },
+  {
+    path: '',
+    loadChildren: () => import('./tab-nav/tab-nav.module').then( m => m.TabNavPageModule)
+  },
+  
+
 
 ];
 

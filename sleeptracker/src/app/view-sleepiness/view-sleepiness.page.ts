@@ -3,6 +3,7 @@ import { StanfordSleepinessData } from '../data/stanford-sleepiness-data';
 import { SleepService } from '../services/sleep.service';
 import { ActionSheetController } from '@ionic/angular'
 import { Storage } from '@capacitor/storage';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-view-sleepiness',
@@ -11,10 +12,14 @@ import { Storage } from '@capacitor/storage';
 })
 export class ViewSleepinessPage implements OnInit {
 
-  constructor(private sleepService:SleepService, private actionSheetController:ActionSheetController) { }
+  constructor(private sleepService:SleepService, private actionSheetController:ActionSheetController,private navCtrl:NavController) { }
 
   ngOnInit() {
   }
+
+  back(){
+		this.navCtrl.back();
+	}
 
   presentToast(idxSleepiness:number, keyInAll:string) {
     

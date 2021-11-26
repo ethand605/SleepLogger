@@ -3,6 +3,7 @@ import { SleepService } from '../services/sleep.service';
 import { OvernightSleepData } from '../data/overnight-sleep-data';
 import { ActionSheetController } from '@ionic/angular'
 import { Storage } from '@capacitor/storage';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-view-overnight',
@@ -11,11 +12,15 @@ import { Storage } from '@capacitor/storage';
 })
 export class ViewOvernightPage implements OnInit {
 
-  constructor(public actionSheetController:ActionSheetController,public sleepService:SleepService) {
+  constructor(public actionSheetController:ActionSheetController,public sleepService:SleepService,public navCtrl:NavController) {
    }
 
   ngOnInit() {
   }
+
+  back(){
+		this.navCtrl.back();
+	}
 
   presentToast(idxInOvernightSleep:number, keyInAll:string) {
     

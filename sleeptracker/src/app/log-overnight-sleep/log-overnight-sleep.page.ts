@@ -3,6 +3,7 @@ import { OvernightSleepData } from '../data/overnight-sleep-data';
 import { Storage } from '@capacitor/storage';
 import { SleepService } from '../services/sleep.service';
 import { ToastController } from '@ionic/angular'
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-log-overnight-sleep',
@@ -16,18 +17,23 @@ export class LogOvernightSleepPage implements OnInit {
   //private loggedDate:Date;
   private overnightSleep:OvernightSleepData;
 
-  constructor(private sleepService:SleepService) { }
+  constructor(private sleepService:SleepService, private navCtrl:NavController) { }
 
   ngOnInit() {
   }
 
   saveOvernight() {
+    this.back();
     let start = new Date(this.sleepStart);
     let end = new Date(this.sleepEnd);
-    //this.loggedDate=start;
     this.overnightSleep=new OvernightSleepData(start,end,'0');//don't use the key that's set here. this does not wait for the promises
                                                               //'0' is a placeholder
-    //console.log("log page"+SleepService.AllSleepData.length.toString());
+  
     this.sleepService.logOvernightData(this.overnightSleep);
+    
+	}
+
+  back(){
+		this.navCtrl.back();
 	}
 }

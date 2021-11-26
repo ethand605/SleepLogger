@@ -19,9 +19,7 @@ export class SleepService {
 			this.addDefaultData();
 			SleepService.LoadDefaultData = false;
 		}
-		// Storage.keys().then((k)=>{
-		// 	console.log(k);
-		// })
+
 		this.loadDataFromStorage();
 	}
 
@@ -42,7 +40,6 @@ export class SleepService {
 	public logOvernightData(sleepData:OvernightSleepData) {
 		//key is the length of the string
 		let key:string = SleepService.AllSleepData.length.toString();
-		//console.log("sleep service:"+key);
 		sleepData.pos=key;
 		let value = sleepData.startTime+','+sleepData.endTime;
 		Storage.set(({
@@ -51,13 +48,11 @@ export class SleepService {
 		  }));
 
 		SleepService.AllSleepData.push(sleepData);
-		//console.log("inserted:"+SleepService.AllSleepData.length.toString());
 		SleepService.AllOvernightData.push(sleepData);
 	}
 
 	public logSleepinessData(sleepData:StanfordSleepinessData) {
 		let key:string = SleepService.AllSleepData.length.toString();
-		//console.log("sleep service:"+key);
 		let value:string = sleepData.date + ',' + sleepData.rating + ',' + sleepData.note;
 		sleepData.pos=key;
 		Storage.set(({
@@ -66,7 +61,6 @@ export class SleepService {
 		  }));
 
 		SleepService.AllSleepData.push(sleepData);
-		//console.log("inserted:"+SleepService.AllSleepData.length.toString());
 		SleepService.AllSleepinessData.push(sleepData);
 	}
 	

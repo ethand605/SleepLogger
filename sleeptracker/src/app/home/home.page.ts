@@ -3,6 +3,7 @@ import { SleepService } from '../services/sleep.service';
 import { SleepData } from '../data/sleep-data';
 import { OvernightSleepData } from '../data/overnight-sleep-data';
 import { StanfordSleepinessData } from '../data/stanford-sleepiness-data';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +12,7 @@ import { StanfordSleepinessData } from '../data/stanford-sleepiness-data';
 })
 export class HomePage {
 
-	constructor(public sleepService:SleepService) {
+	constructor(public sleepService:SleepService,public navCtrl:NavController) {
 		
 	}
 
@@ -22,5 +23,17 @@ export class HomePage {
 	get allSleepData() {
 		return SleepService.AllSleepData;
 	}
+
+	goToLogOvernightSleep(){
+		this.navCtrl.navigateForward('/log-overnight-sleep');
+	}
+
+	goToLogSleepiness(){
+		this.navCtrl.navigateForward('/log-sleepiness-page');
+	}
+
+	
+
+	
 
 }

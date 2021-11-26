@@ -22,10 +22,9 @@
         <ion-label>Sleepiness</ion-label>
       </ion-list-header>
       
-
       <ion-item  *ngFor='let scale of staticScales | slice:1; index as i' >
         <ion-label class='options'>{{i + 1}} - {{scale}}</ion-label>
-        <ion-radio slot="end" value={{i}}></ion-radio>
+        <ion-radio slot="end" value={{i+1}}></ion-radio>
       </ion-item>
       <!-- concatenate summary with user note -->
 
@@ -38,7 +37,7 @@
   </ion-list>
 
   <ion-item class="background">
-    <ion-button *ngIf='loggedValue' expand="block" (click)='saveSleepiness()'>Save Data</ion-button>
+    <ion-button *ngIf='loggedValue&&date' expand="block" (click)='saveSleepiness()'>Save Data</ion-button>
   </ion-item>
 </ion-content>
 

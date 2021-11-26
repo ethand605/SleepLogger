@@ -53,7 +53,10 @@ export class SleepService {
 
 	public logSleepinessData(sleepData:StanfordSleepinessData) {
 		let key:string = SleepService.AllSleepData.length.toString();
-		let value:string = sleepData.date + ',' + sleepData.rating + ',' + sleepData.note;
+		let value:string;
+		value = sleepData.date + ',' + sleepData.rating + ',' + sleepData.note;	
+		
+		
 		sleepData.pos=key;
 		Storage.set(({
 			key: key,

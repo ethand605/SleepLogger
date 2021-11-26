@@ -11,4 +11,4 @@ npm install --save @capacitor/core @capacitor/cli\
 ionic lab 
 
 ## Demo
-https://youtu.be/6moK1NWEHOc
+https://youtu.be/QRHuxOx2ESs

@@ -28,7 +28,7 @@ export class LogSleepinessPagePage implements OnInit {
     let date = new Date(this.date);
     let value = this.loggedValue;
     let note = this.note;
-    this.sleepiness = new StanfordSleepinessData(date, parseInt(value), note);
+    this.sleepiness = new StanfordSleepinessData(date, parseInt(value), '0',note);
     this.sleepService.logSleepinessData(this.sleepiness);
   }
 

@@ -2,7 +2,7 @@
 A sleep tracker(logger) app that allows you to log and view sleeped hours and sleepiness.
 
 ## Tools
-Made using ionic ,capacitor storage, and Sass.
+Made using ionic, Angular, capacitor storage, and Sass.
 
 ## Run commands
 npm install -g @ionic/cli\

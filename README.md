@@ -3,10 +3,10 @@ A sleep tracker(logger) app that allows you to log and view sleeped hours and sl
 
 ## Tools
 Made using 
--Ionic 
--Angular 
--Capacitor Storage
--Sass
+- Ionic 
+- Angular 
+- Capacitor Storage
+- Sass
 
 ## Run commands
 npm install -g @ionic/cli\
